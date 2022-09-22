@@ -3,12 +3,24 @@ import { showAlert } from '/js/alerts.js';
 const updateData = async (data, type) => {
   try {
     const route = type === 'password' ? 'updateMyPassword' : 'updateMe';
+    axios.defaults.headers.common['Authorization'] = `Bearer ${
+      document.cookie.match(new RegExp('(^| )' + 'jwt' + '=([^;]+)'))[2]
+    }`;
+    axios.defaults.withCredentials = true;
     const res = await axios({
       method: 'PATCH',
       url: `http://127.0.0.1:8000/api/v1/users/${route}`,
       data,
     });
     if (res.data.status === 'success') {
+      if (type === 'password') {
+        var expires = '';
+        var date = new Date();
+        date.setTime(date.getTime() + 1 * 24 * 60 * 60 * 1000);
+        expires = '; expires=' + date.toUTCString();
+        document.cookie =
+          'jwt=' + (res.data.token || '') + expires + '; path=/';
+      }
       showAlert('success', 'Updated data successfully!');
       window.setTimeout(() => {
         location.reload(true);
