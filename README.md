@@ -122,6 +122,10 @@ JWT_COOKIE_EXPIRES_IN=[Date example: 1 "for one day"] <br></p> </blockquote>
   <img src="./Images/Tour Page 6.PNG">
 </li>
 <li>
+  <h4>Booking a tour with Stripe.</h4>
+  <img src="./Images/Booking a tour with Stripe.PNG">
+</li>
+<li>
   <h4>My Tours after booking.</h4>
   <img src="./Images/My Tours after booking.PNG">
 </li>
