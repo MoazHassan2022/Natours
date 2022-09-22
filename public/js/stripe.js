@@ -8,12 +8,10 @@ const bookTour = async (tourID) => {
     axios.defaults.headers.common['Authorization'] = `Bearer ${
       document.cookie.match(new RegExp('(^| )' + 'jwt' + '=([^;]+)'))[2]
     }`;
-    axios.defaults.withCredentials = true;
     // 1) Get checkout session from API
     const session = await axios.get(
-      `http://127.0.0.1:8000/api/v1/bookings/checkout-session/${tourID}`
+      `/api/v1/bookings/checkout-session/${tourID}`
     );
-    console.log(session);
 
     // 2) Create checkout form + chanre credit card
     await stripe.redirectToCheckout({
@@ -21,8 +19,7 @@ const bookTour = async (tourID) => {
       sessionId: session.data.session.id,
     });
   } catch (err) {
-    console.log(err);
-    showAlert('error', err);
+    showAlert('error', err.response.data.message);
   }
 };
 

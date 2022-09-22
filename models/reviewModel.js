@@ -49,10 +49,10 @@ reviewsSchema.pre(/^find/, function (next) {
   });
   next();
 });
-reviewsSchema.post(/^find/, function (docs, next) {
+/*reviewsSchema.post(/^find/, function (docs, next) {
   console.log(`Query took ${(Date.now() - this.start) / 1000} seconds!`); // this points to query object
   next();
-});
+});*/
 
 reviewsSchema.statics.calcRatingsAverage = async function (tourId) {
   const stats = await this.aggregate([

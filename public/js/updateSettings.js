@@ -6,10 +6,9 @@ const updateData = async (data, type) => {
     axios.defaults.headers.common['Authorization'] = `Bearer ${
       document.cookie.match(new RegExp('(^| )' + 'jwt' + '=([^;]+)'))[2]
     }`;
-    axios.defaults.withCredentials = true;
     const res = await axios({
       method: 'PATCH',
-      url: `http://127.0.0.1:8000/api/v1/users/${route}`,
+      url: `/api/v1/users/${route}`,
       data,
     });
     if (res.data.status === 'success') {
@@ -27,7 +26,6 @@ const updateData = async (data, type) => {
       }, 1000);
     }
   } catch (err) {
-    console.log(err.response.data.stack);
     showAlert('error', err.response.data.message);
   }
 };

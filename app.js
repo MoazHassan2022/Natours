@@ -14,6 +14,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const compression = require('compression');
 
 const app = express();
 
@@ -44,7 +45,7 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
-app.use(cors({ credentials: true, origin: 'http://localhost:8000' }));
+app.use(cors(/* { credentials: true, origin: 'http://localhost:8000' } */));
 app.set('view engine', 'pug');
 app.set('views', `${__dirname}/views`);
 
@@ -97,6 +98,8 @@ app.use(express.static(`${__dirname}/public`));
 
 app.use(cookieParser());
 // Write down the date and log the headers
+
+app.use(compression());
 app.use((req, res, next) => {
   req.requestTime = new Date().toLocaleString();
   next();
