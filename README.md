@@ -21,6 +21,7 @@
   <li><a href="https://www.sitepoint.com/a-beginners-guide-to-pug/">Pug HTML Templates</a></li>
   <li><a href="https://nodemailer.com/about/">Nodemailer</a></li>
   <li><a href="https://stripe.com/en-gb-us">Stripe</a></li>
+  <li><a href="https://www.mapbox.com/">Mapbox</a></li>
 
  </ul>
 
