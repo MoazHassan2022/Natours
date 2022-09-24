@@ -46,6 +46,7 @@ app.use(function (req, res, next) {
   next();
 });
 app.use(cors(/* { credentials: true, origin: 'http://localhost:8000' } */));
+app.options('*', cors());
 app.set('view engine', 'pug');
 app.set('views', `${__dirname}/views`);
 
