@@ -4,7 +4,8 @@
   "description": "Node JS Project",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js",
     "start:prod": "set NODE_ENV=production&&nodemon server.js",
     "debug": "ndb server.js"
   },
@@ -48,5 +49,8 @@
     "prettier": "^2.7.1",
     "sharp": "^0.31.0",
     "stripe": "^7.0.0"
+  },
+  "engines": {
+    "node": "^16"
   }
 }
