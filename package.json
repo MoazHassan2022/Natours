@@ -33,7 +33,9 @@
     "should-send-same-site-none": "^2.0.5",
     "slugify": "^1.6.5",
     "validator": "^13.7.0",
-    "xss-clean": "^0.1.1"
+    "xss-clean": "^0.1.1",
+    "sharp": "^0.31.0",
+    "stripe": "^7.0.0"
   },
   "devDependencies": {
     "eslint": "^8.21.0",
