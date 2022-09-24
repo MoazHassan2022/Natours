@@ -14,7 +14,11 @@
 
 <h2 href="#DeployedWebsite">Deployed Website : </h2>
  <ul>
-  <li><a href="https://natours-moaz.herokuapp.com/">You can see the deployed website on Heroku here</a></li>
+  <li><a href="https://natours-moaz.herokuapp.com/">You can see the deployed website on Heroku here
+  <blockquote>
+  <p>NOTE: Heroku is planning to prevent free servers soon, so maybe when you see this, the website will not be there anymore.
+ </p>
+</blockquote></a></li>
  </ul>
 
 <h2 href="#BuiltWith">Built With : </h2>
