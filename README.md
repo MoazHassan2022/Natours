@@ -12,7 +12,7 @@
   <li><a href="#Screenshots">Screenshots</a></li>
 </ul>
 
-<h2 href="#DeployedWebsite">Built With : </h2>
+<h2 href="#DeployedWebsite">Deployed Website : </h2>
  <ul>
   <li><a href="https://natours-moaz.herokuapp.com/">You can see the deployed website on Heroku here</a></li>
  </ul>
